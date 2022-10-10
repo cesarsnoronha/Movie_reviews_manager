@@ -1,4 +1,4 @@
-import funcjason
+import funcjson
 import funclogin
 import funcmovies
 
@@ -137,7 +137,7 @@ class adm(usuario):
 
     @staticmethod
     def delete_user():
-        usuarios_cadastrados = funcjason.lendo_users_json()
+        usuarios_cadastrados = funcjson.lendo_users_json()
         passou_checagem = True
         print(f'Os usuários cadastrados são: \n')
         for lista_de_usuarios in usuarios_cadastrados:
@@ -147,14 +147,14 @@ class adm(usuario):
         for i in range(len(usuarios_cadastrados)):
             if usuario == usuarios_cadastrados[i]['Name']:
                 del usuarios_cadastrados[i]
-                funcjason.salvando_users_json(usuarios_cadastrados)
+                funcjson.salvando_users_json(usuarios_cadastrados)
                 print(f'usuário deletado')
                 break
 
     @staticmethod
     def create_account():
         usuario = input(f'Digite seu usuário: ')
-        usuarios_cadastrados = funcjason.lendo_users_json()
+        usuarios_cadastrados = funcjson.lendo_users_json()
         passou_checagem = True
         for lista_de_usuarios in usuarios_cadastrados:
             if usuario == lista_de_usuarios['Name']:
@@ -167,12 +167,12 @@ class adm(usuario):
                             "admin": False}
 
             usuarios_cadastrados.append(novo_usuario)
-            funcjason.salvando_users_json(usuarios_cadastrados)
+            funcjson.salvando_users_json(usuarios_cadastrados)
         else:
             print(f'usuário já cadastrado')
 
 if __name__ == '__main__':
 
-    data = funcjason.lendo_filmes_json()
+    data = funcjson.lendo_filmes_json()
     menu_login()
 
