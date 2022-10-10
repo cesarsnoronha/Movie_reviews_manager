@@ -10,7 +10,7 @@ def menu_login():
     rodando_menu = True
     while rodando_menu:
         opcao_seguida = input(f'o----------------------------------------------------------o\n'
-                              f'o------------------------Menu de login---------------------o\n'
+                              f'o-----------------------Menu de login----------------------o\n'
                               f'o----------------------------------------------------------o\n'
                               f'Realizar login (Escreva 1)\n' #Feito
                               f'Criar uma conta (Escreva 2)\n'
